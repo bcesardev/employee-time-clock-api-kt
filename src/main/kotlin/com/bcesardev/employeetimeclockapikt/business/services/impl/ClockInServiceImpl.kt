@@ -6,8 +6,9 @@ import com.bcesardev.employeetimeclockapikt.dataproviders.repositories.ClockInRe
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.repository.findByIdOrNull
+import org.springframework.stereotype.Service
 
-
+@Service
 class ClockInServiceImpl(val repository: ClockInRepository) : ClockInService {
 
     override fun searchByEmployeeId(employeeId: String, pageRequest: PageRequest): Page<ClockIn> =

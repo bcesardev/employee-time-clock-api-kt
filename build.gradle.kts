@@ -24,9 +24,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+		exclude(group = "org.junit.jupiter", module = "junit-jupiter")
+		exclude(group = "org.mockito", module = "mockito-junit-jupiter")
 	}
 	testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation("junit:junit:4.12")
 }
 
 tasks.withType<Test> {

@@ -1,7 +1,7 @@
 package com.bcesardev.employeetimeclockapikt.business.utils
 
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Test
+import com.mongodb.internal.connection.tlschannel.util.Util.assertTrue
+import org.junit.Test
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 class PasswordUtilsTest {
@@ -12,6 +12,6 @@ class PasswordUtilsTest {
     @Test
     fun testGenerateHashPassword() {
         val hash = generateBCrypt(PASSWORD)
-        Assertions.assertTrue(bCryptEncoder.matches(PASSWORD, hash))
+        assertTrue(bCryptEncoder.matches(PASSWORD, hash))
     }
 }

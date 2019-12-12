@@ -3,18 +3,18 @@ package com.bcesardev.employeetimeclockapikt.business.utils.business.services
 import com.bcesardev.employeetimeclockapikt.business.services.CompanyService
 import com.bcesardev.employeetimeclockapikt.dataproviders.documents.Company
 import com.bcesardev.employeetimeclockapikt.dataproviders.repositories.CompanyRepository
-import org.junit.jupiter.api.Assertions.assertNotNull
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
+import junit.framework.Assert.assertNotNull
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.BDDMockito
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.test.context.junit.jupiter.SpringExtension
+import org.springframework.test.context.junit4.SpringRunner
 
 @SpringBootTest
-@ExtendWith(SpringExtension::class)
+@RunWith(SpringRunner::class)
 class CompanyServiceTest {
 
     @Autowired
@@ -25,7 +25,7 @@ class CompanyServiceTest {
 
     private val CNPJ = "51463645000100"
 
-    @BeforeEach
+    @Before
     @Throws(Exception::class)
     fun setUp() {
         BDDMockito.given(repository?.findByCnpj(CNPJ)).willReturn(company())
