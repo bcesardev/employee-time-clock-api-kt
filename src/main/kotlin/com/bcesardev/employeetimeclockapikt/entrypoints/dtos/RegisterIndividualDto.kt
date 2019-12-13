@@ -1,6 +1,7 @@
 package com.bcesardev.employeetimeclockapikt.entrypoints.dtos
 
 import org.hibernate.validator.constraints.Length
+import org.hibernate.validator.constraints.br.CNPJ
 import org.hibernate.validator.constraints.br.CPF
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
@@ -22,6 +23,10 @@ data class RegisterIndividualDto(
         @get:NotBlank(message = "CPF não pode estar vazio")
         @get:CPF(message = "CPF Inválido")
         val cpf: String = "",
+
+        @get:NotBlank(message = "CNPJ não pode estar vazio")
+        @get:CNPJ(message = "CNPJ Inválido")
+        val cnpj: String = "",
 
         val companyId: String = "",
 

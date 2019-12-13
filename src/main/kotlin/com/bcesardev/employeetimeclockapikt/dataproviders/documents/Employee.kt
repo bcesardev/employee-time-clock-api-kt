@@ -14,6 +14,6 @@ data class Employee(
         val companyId: String,
         val valueHour: Double? = 0.0,
         val qtyWorkHourByDay: Float? = 0.0f,
-        val atyLunchHour: Float? = 0.0f,
+        val qtyLunchHour: Float? = 0.0f,
         @Id val id: String? = null
 )
