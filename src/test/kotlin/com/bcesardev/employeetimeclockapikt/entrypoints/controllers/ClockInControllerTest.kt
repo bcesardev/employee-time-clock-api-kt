@@ -87,7 +87,7 @@ class ClockInControllerTest {
 
     @Test
     @Throws(Exception::class)
-    @WithMockUser
+    @WithMockUser(username = "admin@admin.com", roles = arrayOf("ADMIN"))
     fun testRemoveClockIn() {
 
         BDDMockito.given<ClockIn>(clockInService?.searchById(clockInId)).willReturn(getClockInEntity())
